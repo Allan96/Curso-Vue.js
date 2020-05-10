@@ -1,6 +1,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <div id="app">
+    <input type="text" name="titulo" id="titulo" v-on:input="alterarTitulo">
     <p>
         {{ titulo }}
     </p>
@@ -12,6 +13,11 @@
         el: '#app',
         data: {
             titulo: "Testando titulo"
+        },
+        methods: {
+            alterarTitulo: function(event) {
+                this.titulo = event.target.value
+            }
         }
     })
 </script>
