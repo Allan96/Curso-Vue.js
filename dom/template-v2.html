@@ -4,6 +4,9 @@
     <p>
         {{ titulo }}
     </p>
+    <p>
+        {{ saudacao() }}
+    </p>
 </div>
 
 
@@ -13,6 +16,11 @@
         data: {
             titulo: "Testando titulo"
         },
-        methods: {}
+        methods: {
+            // saudacao()
+            saudacao: function() {
+                return 'Bom dia!'
+            }
+        }
     })
 </script>
