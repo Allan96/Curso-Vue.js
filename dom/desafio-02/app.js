@@ -6,6 +6,9 @@ new Vue({
     methods: {
         exibirAlerta() {
             alert('Exibir Alerta');
+        },
+        keyDown() {
+            this.valor = event.target.value;
         }
     }
 })
