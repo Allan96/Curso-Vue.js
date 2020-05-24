@@ -1,0 +1,42 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>
+        Contador: {{ contador }} | {{ contador2 }}
+    </p>
+    <p>
+        Resultado: {{ resultado }}
+    </p>
+    <button v-on:click="aumentar">Aumentar</button>
+    <button v-on:click="contador2++">Aumentar 2 </button>
+    <button v-on:click="diminuir">Diminuir</button>
+</div>
+
+<!-- 
+    Computed, ele só chama a função quando a função realmente é necessária, pois ele guarda no cache essa informação.
+
+    Já Methods, se você alterar algo no DOM, e uma função estiver sendo referenciada também no DOM, ela vai ser chamada, mesmo que ela não seja usada no momento da ação. Como se o navegador tivesse sido relodado e todas as funções recarregadas novamente. 
+
+-->
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+            contador2: 0,
+        },
+        computed: {
+            resultado() {
+                return this.contador >= 5 ? 'Maior ou igual a 5' : 'Menor que 5';
+            }
+        },
+        methods: {
+            aumentar() {
+                this.contador++;
+            },
+            diminuir() {
+                this.contador--;
+            }
+        }
+    })
+</script>
