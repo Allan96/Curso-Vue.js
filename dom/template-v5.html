@@ -1,7 +1,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <div id="app">
-    <p>
+    <p v-once>
         {{ titulo }}
     </p>
     <p>
@@ -15,13 +15,13 @@
     new Vue({
         el: '#app',
         data: {
-            titulo: "Testando titulo",
+            titulo: 'Testando titulo',
             link: 'https://google.com'
         },
         methods: {
             // saudacao()
             saudacao: function() {
-                console.log(this)
+                this.titulo = 'Bom dia'
                 return this.titulo
             }
         }
