@@ -10,7 +10,9 @@ new Vue({
     },
     methods: {
         iniciarEfeito() {
-            this.efeito = !this.efeito
+            setInterval(() => {
+                this.efeito = !this.efeito
+            }, 1000);
         },
         iniciarProgresso() {
             this.largura = this.largura == '100%' ? '0' : '100%'
